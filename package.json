@@ -20,6 +20,5 @@
     "jasmine": "^4.3.0"
   },
   "dependencies": {
-    "incorporator": "^1.0.0"
   }
 }
