@@ -1,0 +1,22 @@
+{
+  "name": "incorporator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaspernj/incorporator.git"
+  },
+  "author": "k@spernj.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaspernj/incorporator/issues"
+  },
+  "homepage": "https://github.com/kaspernj/incorporator#readme",
+  "devDependencies": {
+    "jasmine": "^4.3.0"
+  }
+}
