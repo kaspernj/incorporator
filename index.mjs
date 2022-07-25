@@ -1,3 +1,11 @@
+const incorporate = (...objects) => {
+  const incorporator = new Incorporator({objects})
+
+  return incorporator.merge()
+}
+
+export {incorporate}
+
 export default class Incorporator {
   constructor({objects}) {
     this.objects = objects
