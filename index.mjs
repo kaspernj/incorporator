@@ -66,7 +66,19 @@ export default class Incorporator {
           mergeInto[key] = value
         }
       } else {
-        mergeInto[key] = value
+        let newValue
+
+        if (Array.isArray(value)) {
+          newValue = []
+          this.mergeArraysInto(newValue, value)
+        } else if (this.isPlainObject(value)) {
+          newValue = {}
+          this.mergeObjectsInto(newValue, value)
+        } else {
+          newValue = value
+        }
+
+        mergeInto[key] = newValue
       }
     }
   }
