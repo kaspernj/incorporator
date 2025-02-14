@@ -1,6 +1,6 @@
 {
   "name": "incorporator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.mjs",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/kaspernj/incorporator.git"
   },
-  "author": "k@spernj.org",
+  "author": "kasper@diestoeckels.de",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kaspernj/incorporator/issues"
