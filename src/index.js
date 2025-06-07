@@ -63,11 +63,27 @@ export default class Incorporator {
         } else if (this.isPlainObject(mergeIntoValue) && this.isPlainObject(value)) {
           this.mergeObjectsInto(mergeIntoValue, value)
         } else {
-          mergeInto[key] = value
+          mergeInto[key] = this.cloneValue(value)
         }
       } else {
-        mergeInto[key] = value
+        mergeInto[key] = this.cloneValue(value)
       }
     }
+  }
+
+  cloneValue(value) {
+    let newValue
+
+    if (Array.isArray(value)) {
+      newValue = []
+      this.mergeArraysInto(newValue, value)
+    } else if (this.isPlainObject(value)) {
+      newValue = {}
+      this.mergeObjectsInto(newValue, value)
+    } else {
+      newValue = value
+    }
+
+    return newValue
   }
 }

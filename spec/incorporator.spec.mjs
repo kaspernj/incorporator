@@ -53,4 +53,73 @@ describe("Incorporator", () => {
 
     expect(object).toEqual({ransack: {account_id_eq: 1}})
   })
+
+  it("doesnt corrupt other objects in the given objects to merge", () => {
+    const object1 = {
+      people: {
+        Kasper: {
+          lastName: "Nielsen",
+          objects: [1]
+        }
+      }
+    }
+
+    const object2 = {
+      people: {
+        Kasper: {
+          lastName: "Johansen",
+          objects: [2]
+        }
+      }
+    }
+
+    const object3 = {
+      people: {
+        Kasper: {
+          lastName: "Stoeckel",
+          objects: [3]
+        }
+      }
+    }
+
+    const object = {}
+
+    incorporate(object, object1, object2, object3)
+
+    expect(object).toEqual({
+      people: {
+        Kasper: {
+          lastName: "Stoeckel",
+          objects: [1, 2, 3]
+        }
+      }
+    })
+
+    expect(object1).toEqual({
+      people: {
+        Kasper: {
+          lastName: "Nielsen",
+          objects: [1]
+        }
+      }
+    })
+
+    expect(object2).toEqual({
+      people: {
+        Kasper: {
+          lastName: "Johansen",
+          objects: [2]
+        }
+      }
+    })
+
+    expect(object3).toEqual({
+      people: {
+        Kasper: {
+          lastName: "Stoeckel",
+          objects: [3]
+        }
+      }
+    })
+  })
 })
