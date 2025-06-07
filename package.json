@@ -2,7 +2,8 @@
   "name": "incorporator",
   "version": "1.0.3",
   "description": "",
-  "main": "index.mjs",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "jasmine"
   },
