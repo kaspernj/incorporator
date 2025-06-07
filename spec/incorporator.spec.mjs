@@ -1,4 +1,4 @@
-import Incorporator, {incorporate} from "../index.mjs"
+import Incorporator, {incorporate} from "../src/index.js"
 
 describe("Incorporator", () => {
   it("replaces array values if the option is given", () => {
