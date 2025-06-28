@@ -55,6 +55,8 @@ describe("Incorporator", () => {
   })
 
   it("doesnt corrupt other objects in the given objects to merge", () => {
+    const file = new File(["asd"], "file.jpeg")
+
     const object1 = {
       people: {
         Kasper: {
@@ -68,7 +70,8 @@ describe("Incorporator", () => {
       people: {
         Kasper: {
           lastName: "Johansen",
-          objects: [2]
+          objects: [2],
+          file
         }
       }
     }
@@ -90,7 +93,8 @@ describe("Incorporator", () => {
       people: {
         Kasper: {
           lastName: "Stoeckel",
-          objects: [1, 2, 3]
+          objects: [1, 2, 3],
+          file
         }
       }
     })
@@ -108,7 +112,8 @@ describe("Incorporator", () => {
       people: {
         Kasper: {
           lastName: "Johansen",
-          objects: [2]
+          objects: [2],
+          file
         }
       }
     })
