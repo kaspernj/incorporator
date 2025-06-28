@@ -21,7 +21,7 @@ export default class Incorporator {
   }
 
   isPlainObject = (input) => {
-    if (input && typeof input === "object" && !Array.isArray(input)) {
+    if (input && typeof input === "object" && input.constructor == Object) {
       return true
     }
 
