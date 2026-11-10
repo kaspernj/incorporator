@@ -1,0 +1,13 @@
+before_script:
+  - npm install
+script:
+  - npm test
+
+# Deny-list, not an allow-list: "**" keeps every path a run and only the paths
+# this build provably never reads are excluded. A change to this file runs the
+# build whatever the rules below say.
+paths:
+  - "**"
+  - "!README.md"
+  - "!.github/**"
+  - "!.gitignore"
